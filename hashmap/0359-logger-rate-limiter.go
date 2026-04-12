@@ -22,6 +22,9 @@ func Constructor() Logger {
 
 func (l *Logger) ShouldPrintMessage(timestamp int, message string) bool {
 	if timestamp < l.nextAllowed[message] {
+
+		// in Java, this would throw an exception for missing key, but in Go, missing map key returns zero value (0), so this handles new messages too
+		// in java, syntax will be l.nextAllowed.getOrDefault(message, 0) to handle missing keys, but in Go, missing map key returns zero value (0), so this handles new messages too
 		// In Go, missing map key returns zero value (0), so this handles new messages too
 		return false
 	}
