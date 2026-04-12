@@ -38,7 +38,7 @@ type RandomizedSet struct {
 	list     []int
 }
 
-func Constructor() RandomizedSet {
+func NewRandomizedSet() RandomizedSet {
 	return RandomizedSet{
 		indexMap: make(map[int]int),
 		list:     []int{},
