@@ -20,6 +20,8 @@ func Constructor() Logger {
 	return Logger{nextAllowed: make(map[string]int)}
 }
 
+// (l *Logger) — Method Receiver in Go
+// This is Go's way of attaching a method to a struct. It's the equivalent of this in Java.
 func (l *Logger) ShouldPrintMessage(timestamp int, message string) bool {
 	if timestamp < l.nextAllowed[message] {
 
