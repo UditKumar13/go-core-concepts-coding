@@ -16,7 +16,7 @@ type Logger struct {
 	nextAllowed map[string]int
 }
 
-func Constructor() Logger {
+func NewLogger() Logger {
 	return Logger{nextAllowed: make(map[string]int)}
 }
 
