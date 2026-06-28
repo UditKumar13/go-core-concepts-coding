@@ -31,6 +31,7 @@ result := <-slowOperation()  // what if it never returns?
 ```
 
 With timeout — give up after 2 seconds:
+
 ```go
 select {
 case result := <-slowOperation():
